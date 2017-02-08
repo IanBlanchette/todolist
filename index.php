@@ -6,7 +6,7 @@ if(isset($_SESSION['admin']))
 	exit();
 }
 ?>
-<!DOCTYPE>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset ="utf-8">
@@ -15,12 +15,12 @@ if(isset($_SESSION['admin']))
 	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
 	<link rel="stylesheet" href="font-awesome/font-awesome.css">
-	<link rel="stylesheet" href="stylesheets/stylesheet.css">
+	<link rel="stylesheet" href="stylesheets/styles.css">
 </head>
 <body>
 	<div class="container">
 		<div class="row text-center">
-			<div>
+			<div class="my-box">
 				<h1>My To Do List</h1>
 				<h3>Welcome</h3>
 				<form action="do-login.php" method="POST">
