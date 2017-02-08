@@ -8,13 +8,14 @@ body
 	-webkit-box-shadow: 0px 0px 40px 5px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 40px 5px rgba(0,0,0,0.75);
 	box-shadow: 0px 0px 40px 5px rgba(0,0,0,0.75);
-	border: 1px solid white;
+	
 	background-color: white;
 	width: 40%;
 	margin-top: 10%;
 	margin-bottom: auto;
 	margin-right: auto;
 	margin-left: auto;
+	
 }
 
 form
@@ -25,4 +26,9 @@ form
 div h1 
 {
 	font-family: verdana;
+}
+
+h1
+{
+	padding-top: 5%;
 }
