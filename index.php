@@ -13,8 +13,8 @@
 
 <body>
  <div class="container">
-    <div class="row">
-    
+    <div class="row text-center">
+ 
     <h1>To Do List</h1>
     <h3>Welcome</h3>
     <h3>Please Log In</h3>
