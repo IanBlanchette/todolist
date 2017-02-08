@@ -26,11 +26,11 @@ if(isset($_SESSION['admin']))
 				<form action="do-login.php" method="POST">
 					<span>Username:</span>
 					<br>
-					<input type="text" name="username">
+					<input type="text" placeholder="username" name="username">
 					<br>
 					<span>Password:</span>
 					<br>
-					<input type="password" name="password">
+					<input type="password" placeholder="password" name="password">
 					<br>
 					<br>
 					<input class="btn btn-primary" type="submit" name="submit" value="Login">
