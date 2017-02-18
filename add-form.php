@@ -1,9 +1,9 @@
 <?php
 session_start();
-if(isset($_SESSION['admin']))
+if(!isset($_SESSION['admin']))
 {
-	echo "You are already logged in";
-	exit();
+	echo "You must log in";
+	header("Location: ./index.php");
 }
 ?>
 <!DOCTYPE html>
