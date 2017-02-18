@@ -5,13 +5,13 @@ if(!isset($_SESSION['admin']))
 	echo "You must log in";
 	header("Location: ./index.php");
 }
-?>
-<?php
-$dsn = 'mysql:host=ca-cdbr-azure-central-a.cloudapp.net;dbname=todolist';
-$username = 'bdeed905f38b4b';
-$password = 'd78d2897'; 
+
+include_once "database-connect.php";
+
+
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,12 +28,13 @@ $password = 'd78d2897';
 		<div class="row text-center">
 			<div class="my-box">
 				<h1>My To Do List</h1>
-				<form>
+				<form action="database-change.php" method="get">
   <fieldset>
     <legend>Add Your New To Do</legend>
     What's To Do: <input type="text" name="todo" placeholer="What do you need to do"><br>
       </fieldset>
 </form>
+<button class="btn btn-primary"><a href="home.php">Back To List</a></button>
 
 			</div>
 		</div>

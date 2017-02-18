@@ -5,6 +5,8 @@ if(!isset($_SESSION['admin']))
 	echo "You must log in";
 	header("Location: ./index.php");
 }
+
+include_once "database-connect.php";
 ?>
 
 
@@ -25,6 +27,15 @@ if(!isset($_SESSION['admin']))
  <div class="container">
     <div class="row text-center">
   	<h3>This is your personal to do list</h3>
+  	<?php 
+  	$tablename = "SHOW TABLES LIKE 'todolist'"
+
+  	if($tablename !== FALSE)
+  	{
+	echo '<button class="btn btn-primary"><a href="create-table.php">Add New To Do</a></button>'
+  	}
+  	
+
 	<button class="btn btn-primary"><a href="add-form.php">Add New To Do</a></button>
   	<button class="btn btn-danger"><a href="log-out.php">Log Out</a></button>
 
