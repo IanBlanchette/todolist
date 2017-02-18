@@ -8,11 +8,11 @@ if(!isset($_SESSION['admin']))
 ?>
 
 
-<!DOCTYPE>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset ="utf-8">
-<mtea name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>To Do List</title>
 <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
