@@ -27,13 +27,6 @@ include_once "database-connect.php";
  <div class="container">
     <div class="row text-center">
   	<h3>This is your personal to do list</h3>
-  	<?php 
-  	$tablename = "SHOW TABLES LIKE 'todolist'"
-
-  	if($tablename !== FALSE)
-  	{
-	echo '<button class="btn btn-primary"><a href="create-table.php">Add New To Do</a></button>'
-  	}
   	
 
 	<button class="btn btn-primary"><a href="add-form.php">Add New To Do</a></button>
