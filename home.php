@@ -25,7 +25,7 @@ if(!isset($_SESSION['admin']))
  <div class="container">
     <div class="row text-center">
   	<h3>This is your personal to do list</h3>
-
+	<button class="btn btn-primary"><a href="add-form.php">Add New To Do</a></button>
   	<button class="btn btn-danger"><a href="log-out.php">Log Out</a></button>
 
   	</div>
