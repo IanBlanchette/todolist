@@ -6,6 +6,12 @@ if(!isset($_SESSION['admin']))
 	header("Location: ./index.php");
 }
 ?>
+<?php
+$dsn = 'mysql:host=ca-cdbr-azure-central-a.cloudapp.net;dbname=todolist';
+$username = 'bdeed905f38b4b';
+$password = 'd78d2897'; 
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +31,7 @@ if(!isset($_SESSION['admin']))
 				<form>
   <fieldset>
     <legend>Add Your New To Do</legend>
-    What's To Do: <input type="text" name="todo" placeholer="What do you need to do" size="150"><br>
+    What's To Do: <input type="text" name="todo" placeholer="What do you need to do"><br>
       </fieldset>
 </form>
 
