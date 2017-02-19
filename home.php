@@ -6,13 +6,13 @@ if(!isset($_SESSION['admin']))
 	header("Location: ./index.php");
 }
 
-$dsn = 'mysql:host=ca-cdbr-azure-central-a.cloudapp.net;dbname=todolist';
-$userName = 'bdeed905f38b4b';
+$dsn = 'mysql:host=ca-cdbr-azure-central-a.cloudapp.net;port=3306;dbname=todolist';
+$username = 'bdeed905f38b4b';
 $password = 'd78d2897';
 
 try 
 {
-    $db = new PDO($dsn, $userName, $password);  
+    $db = new PDO($dsn, $username, $password);  
 
 }
 catch(PDOException $e) {
