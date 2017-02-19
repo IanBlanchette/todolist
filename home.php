@@ -6,7 +6,7 @@ if(!isset($_SESSION['admin']))
 	header("Location: ./index.php");
 }
 
-include_once "database-connect.php";
+
 ?>
 
 
@@ -32,7 +32,7 @@ include_once "database-connect.php";
   	
   	if($tablename !== FALSE)
   	{
-	echo '<button class="btn btn-primary"><a href="create-table.php">Add New To Do</a></button>';
+	echo '<button class="btn btn-primary"><a href="create-table.php">Add New table</a></button>';
   	}
   	
 ?>

@@ -6,7 +6,7 @@ if(!isset($_SESSION['admin']))
 	header("Location: ./index.php");
 }
 
-include_once "database-connect.php";
+
 
 
 
