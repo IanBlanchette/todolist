@@ -6,9 +6,9 @@ if(!isset($_SESSION['admin']))
 	header("Location: ./index.php");
 }
 
-$dsn = 'mysql:host=ca-cdbr-azure-central-a.cloudapp.net;port=3306;dbname=todolist';
-$username = 'bdeed905f38b4b';
-$password = 'd78d2897';
+$dsn = 'mysql:ca-cdbr-azure-central-a.cloudapp.net;dbname=todolist';
+$username = 'bea2182593f405';
+$password = 'bd166911';
 
 try 
 {
