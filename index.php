@@ -1,42 +1,83 @@
 <?php
 session_start();
-if(isset($_SESSION['admin']))
+if(!isset($_SESSION['admin']))
 {
-	echo "You are already logged in";
-	exit();
+	echo "You must log in";
+	header("Location: ./index.php");
 }
+
+
+// connecting to database
+
+
+$dsn = 'mysql:host=ca-cdbr-azure-central-a.cloudapp.net;dbname=todolist';
+$userName = 'bdeed905f38b4b';
+$password = 'd78d2897';
+
+
+// testing for errors
+try {
+    $db = new PDO($dsn, $userName, $password);
+    //$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+   
+
+}
+catch(PDOException $e) {
+    echo $e->getMessage();
+}
+
+
+
+
+$statement = $db->prepare($query); // encapsulate the sql statement
+
+
+$conn = null;
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset ="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>My To Do List</title>
-	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
-	<link rel="stylesheet" href="font-awesome/font-awesome.css">
-	<link rel="stylesheet" href="stylesheets/styles.css">
+<meta charset ="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>To Do List</title>
+<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="font-awesome/font-awesome.css">
+<link rel="stylesheet" href="stylesheets/styles.css">
+<link rel="stylesheet" href="stylesheets/homestyle.css">
 </head>
+
 <body>
-	<div class="container">
-		<div class="row text-center">
-			<div class="my-box">
-				<h1>My To Do List</h1>
-				<h3>Welcome</h3>
-				<form action="do-login.php" method="POST">
-					<span>Username:</span>
-					<br>
-					<input type="text" placeholder="username" name="username">
-					<br>
-					<span>Password:</span>
-					<br>
-					<input type="password" placeholder="password" name="password">
-					<br>
-					<br>
-					<input class="btn btn-primary" type="submit" name="submit" value="Login">
-				</form>
-			</div>
-		</div>
-	</div>
+ <div class="container">
+    <div class="row text-center">
+  	<h3>This is your personal to do list</h3>
+  	<?php 
+  	$tablename = "SHOW TABLES LIKE 'todolist'";
+  	
+  	if($tablename !== FALSE)
+  	{
+	echo '<button class="btn btn-primary"><a href="create-table.php">Add New table</a></button>';
+  	}
+  	
+?>
+	<button class="btn btn-primary"><a href="add-form.php">Add New To Do</a></button>
+  	<button class="btn btn-danger"><a href="log-out.php">Log Out</a></button>
+
+  	</div>
+
+  	<table class="table">
+
+
+  	</table>
+
+  </div>
+
+
+
 </body>
+
+
+
+
 </html>
