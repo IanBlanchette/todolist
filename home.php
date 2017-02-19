@@ -6,7 +6,7 @@ if(!isset($_SESSION['admin']))
 	header("Location: ./index.php");
 }
 
-$dsn = 'mysql:ca-cdbr-azure-central-a.cloudapp.net;dbname=todolist';
+$dsn = 'mysql:host=ca-cdbr-azure-central-a.cloudapp.net;dbname=todolist';
 $username = 'bea2182593f405';
 $password = 'bd166911';
 
