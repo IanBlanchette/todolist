@@ -6,24 +6,33 @@ if(!isset($_SESSION['admin']))
 	header("Location: ./index.php");
 }
 
-?>
-<?php
+
+// connecting to database
+
 
 $dsn = 'mysql:host=ca-cdbr-azure-central-a.cloudapp.net;dbname=todolist';
-$username = 'bdeed905f38b4b';
-$password = 'd78d2897'; 
+$userName = 'bdeed905f38b4b';
+$password = 'd78d2897';
 
 
-try 
-{
-  $db = new PDO($dsn, $username, $password); // creates PDQ object
-  echo '<p>You are connected to the database</p>';
+// testing for errors
+try {
+    $db = new PDO($dsn, $userName, $password);
+    //$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+   
+
 }
-catch (PDOException $e)
-{
-  $error_message = $e->getMessage();
-  echo '<p>An error occurred while connecting to the database: ' .$error_message. '</p>';
+catch(PDOException $e) {
+    echo $e->getMessage();
 }
+
+
+
+
+$statement = $db->prepare($query); // encapsulate the sql statement
+
+
+$conn = null;
 ?>
 
 <!DOCTYPE html>
