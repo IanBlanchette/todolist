@@ -22,7 +22,7 @@ try
 catch (PDOException $e)
 {
   $error_message = $e->getMessage();
-  echo '<p>An error occurred while connecting to the database: ' . $error_message . '</p>';
+  echo '<p>An error occurred while connecting to the database: ' .$error_message. '</p>';
 }
 ?>
 
