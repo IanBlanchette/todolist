@@ -1,16 +1,15 @@
 <?php
 include_once('database-connect.php');
 $newToDo = $_POST['newToDo'];
-$dueDate = $_POST['dueDate'];
 
 
-$insert = ("INSERT INTO todolist (description, due_date)
-    VALUES(:description, :dueDue)");
-$insert->exec(string(
-    "description" = $newToDo,
-    "dueDate" = $dueDate,
+
+$insert = ("INSERT INTO newtodolist (description)
+    VALUES($newToDo)");
+
+   
  
-));
+
 
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 

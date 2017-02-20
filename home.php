@@ -8,6 +8,11 @@ if(!isset($_SESSION['admin']))
 
 include_once('database-connect.php');
 
+$query = "SELECT * FROM newtodolist"; // SQL statement
+$statement = $db->prepare($query); // encapsulate the sql statement
+$statement->execute(); // run on the db server
+$todo = $statement->fetchAll(); // returns an array
+$statement->closeCursor(); // close the connection
 
 ?>
 
@@ -33,26 +38,23 @@ include_once('database-connect.php');
                 <tr>
                     <th>ID</th>
                     <th>Description</th>
-                    <th>Start Date</th>
-                    <th>Due Date</th>
                     <th></th>
                     <th></th>
                 </tr>
-    <?php foreach($todo as $ian_todolist) : ?>
+    <?php foreach($todo as $newtodolist) : ?>
                         <tr>
-                            <td><?php echo $ian_todolist['id'] ?></td>
-                            <td><?php echo $ian_todolist['description'] ?></td>
-                            <td><?php echo $ian_todolist['creation_date'] ?></td>
-                            <td><?php echo $ian_todolist['due_date'] ?></td>                        
+                            <td><?php echo $newtodolist['id'] ?></td>
+                            <td><?php echo $newtodolist['description'] ?></td>
+                                                  
 
                             <td><a class="btn btn-primary" href="game_details.php?gameID=<?php echo $game['Id'] ?>"><i class="fa fa-pencil-square-o"></i> Edit</a></td>
 
                             <td><a class="btn btn-danger" href="game_delete.php?gameID=<?php echo $game['Id'] ?>"><i class="fa fa-trash-o"></i> Delete</a></td>
                         </tr>
                     <?php endforeach; ?>
-                    <button class="btn btn-primary"><a href="create-table.php">Create List</a></button>
+                   
  	<button class="btn btn-primary"><a href="add-form.php">Add New To Do</a></button>
-                      <button class="btn btn-primary"><a href="delete-table.php">Delete List</a></button>
+                    
   	<button class="btn btn-danger"><a href="log-out.php">Log Out</a></button>
 
 

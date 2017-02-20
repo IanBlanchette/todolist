@@ -35,9 +35,6 @@ include_once('database-connect.php');
 						<legend>Add Your New To Do</legend>
 						What's To Do: <input type="text" placeholder="New To Do" name="newToDo">
 						<br>
-						<br>
-						Whats the Due Date: <input type="date" name="dueDate" placeholder="dd-mm-yyyy" pattern="\d{1,2}-\d{1,2}-\d{4}">
-						<br>
 					</fieldset>
 					<input class="btn btn-primary" type="submit" name="submit" value="New To Do">
 				</form>
