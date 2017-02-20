@@ -8,22 +8,9 @@ if(!isset($_SESSION['admin']))
 
 include_once('database-connect.php');
 
-try 
-{
-  include_once('create-table.php');
-}
-catch(PDOException $e)
-    {
-    echo $e->getMessage();
-    }
 
-$query = "SELECT * FROM todolist"; // SQL statement
-$statement = $db->prepare($query); // encapsulate the sql statement
-$statement->execute(); // run on the db server
-$todo = $statement->fetchAll(); // returns an array
-$statement->closeCursor(); // close the connection
 ?>
-?>
+
 
 <!DOCTYPE html>
 <html lang="en">
