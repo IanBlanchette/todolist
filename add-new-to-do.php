@@ -1,23 +1,20 @@
 <?php
-
+include_once('database-connect.php');
 $newToDo = $_POST['newToDo'];
 $dueDate = $_POST['dueDate'];
 
-try {
 
-$statement = ("INSERT INTO todolist (description, due_date)
+$insert = ("INSERT INTO todolist (description, due_date)
     VALUES(:description, :dueDue)");
-$statement->execute(array(
-    "description" => $newToDo,
-    "dueDate" => $dueDate,
+$insert->exec(string(
+    "description" = $newToDo,
+    "dueDate" = $dueDate,
  
 ));
 
+$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-}
-catch(PDOException $e)
-{
-	echo $e->getMessage();
-}
-
+$db->exec($insert);
+header("Location: ./home.php");
 ?>
+

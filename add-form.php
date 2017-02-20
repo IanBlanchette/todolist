@@ -31,15 +31,18 @@ include_once('database-connect.php');
 			<div class="my-box">
 				<h1>My To Do List</h1>
 				<form action="add-new-to-do.php" method="POST">
-  <fieldset>
-    <legend>Add Your New To Do</legend>
-    What's To Do: <input type="text" name="newToDo" placeholer="What do you need to do"><br>
-    <br>
-    Whats the Due Date: <input type="date" name="dueDate" placeholder="dd-mm-yyyy" pattern="\d{1,2}-\d{1,2}-\d{4}"><br>
-      </fieldset>
-</form>
-<input class="btn btn-primary" type="submit" name="submit" value="New To Do">
-<button class="btn btn-danger"><a href="home.php">Back To List</a></button>
+					<fieldset>
+						<legend>Add Your New To Do</legend>
+						What's To Do: <input type="text" placeholder="New To Do" name="newToDo">
+						<br>
+						<br>
+						Whats the Due Date: <input type="date" name="dueDate" placeholder="dd-mm-yyyy" pattern="\d{1,2}-\d{1,2}-\d{4}">
+						<br>
+					</fieldset>
+					<input class="btn btn-primary" type="submit" name="submit" value="New To Do">
+				</form>
+				
+				<button class="btn btn-danger"><a href="home.php">Back To List</a></button>
 
 			</div>
 		</div>
