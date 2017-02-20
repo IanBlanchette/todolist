@@ -28,7 +28,7 @@ if(!isset($_SESSION['admin']))
 		<div class="row text-center">
 			<div class="my-box">
 				<h1>My To Do List</h1>
-				<form action="database-change.php" method="get">
+				<form action="database-change.php" method="post">
   <fieldset>
     <legend>Add Your New To Do</legend>
     What's To Do: <input type="text" name="todo" placeholer="What do you need to do"><br>
