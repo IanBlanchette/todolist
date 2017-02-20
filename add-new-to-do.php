@@ -4,11 +4,16 @@ $newToDo = $_POST['newToDo'];
 $dueDate = $_POST['dueDate'];
 
 try {
-$insert = "INSERT INTO todolist (description, due_date) VALUES ($newToDo, $dueDate)";
+
+$statement = ("INSERT INTO todolist (description, due_date)
+    VALUES(:description, :dueDue)");
+$statement->execute(array(
+    "description" => $newToDo,
+    "dueDate" => $dueDate,
+ 
+));
 
 
-$db->exec($insert);
-header("Location: ./home.php");
 }
 catch(PDOException $e)
 {
