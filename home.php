@@ -8,14 +8,6 @@ if(!isset($_SESSION['admin']))
 
 include_once('database-connect.php');
 
-try 
-{
-  include_once('create-table.php');
-}
-catch(PDOException $e)
-    {
-    echo $e->getMessage();
-    }
 
 $query = "SELECT * FROM todolist"; // SQL statement
 $statement = $db->prepare($query); // encapsulate the sql statement
@@ -56,7 +48,7 @@ $statement->closeCursor(); // close the connection
                             <td><?php echo $ian_todolist['id'] ?></td>
                             <td><?php echo $ian_todolist['description'] ?></td>
                             <td><?php echo $ian_todolist['creation_date'] ?></td>
-                            <td><?php echo $ian_todolist['due_date'] ?></td>                            <!-- This line sends the gameID to the game_details page -->
+                            <td><?php echo $ian_todolist['due_date'] ?></td>                        
 
                             <td><a class="btn btn-primary" href="game_details.php?gameID=<?php echo $game['Id'] ?>"><i class="fa fa-pencil-square-o"></i> Edit</a></td>
 
