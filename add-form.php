@@ -37,7 +37,8 @@ include_once('database-connect.php');
     <br>
     Whats the Due Date: <input type="date" name="dueDate" placeholder="dd-mm-yyyy" pattern="\d{1,2}-\d{1,2}-\d{4}"><br>
       </fieldset>
-</form><button class="btn btn-primary"><a href="add-new-to-do.php">Create New To Do</a></button>
+</form>
+<input class="btn btn-primary" type="submit" name="submit" value="New To Do">
 <button class="btn btn-danger"><a href="home.php">Back To List</a></button>
 
 			</div>
