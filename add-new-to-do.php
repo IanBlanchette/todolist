@@ -10,7 +10,7 @@ $insert = ("INSERT INTO newtodolist (description)
     VALUES('$newToDo')");
 
 
-try {
+
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -18,4 +18,5 @@ try {
 VALUES ('$newToDo')";
 
         $conn->exec($sql);
+
 ?>
