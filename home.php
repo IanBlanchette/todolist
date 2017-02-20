@@ -15,12 +15,12 @@ $dbname = "ian_todolist";
 try 
 {
     $db = new PDO($dsn, $username, $password);  
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
 }
 catch(PDOException $e) {
     echo $e->getMessage();
 }
-
+#$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $table = "CREATE TABLE IF NOT EXISTS todolist (
     id INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     description VARCHAR(250) NOT NULL,
