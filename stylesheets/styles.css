@@ -32,12 +32,8 @@ h1
 {
 	padding-top: 5%;
 }
-a
-{
-	color: white;
-}
 
-a:hover
+button 
 {
-	color: black;
+	padding: 3px;
 }

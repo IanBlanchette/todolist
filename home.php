@@ -50,8 +50,11 @@ include_once('database-connect.php');
                             <td><a class="btn btn-danger" href="game_delete.php?gameID=<?php echo $game['Id'] ?>"><i class="fa fa-trash-o"></i> Delete</a></td>
                         </tr>
                     <?php endforeach; ?>
+                    <button class="btn btn-primary"><a href="create-table.php">Create List</a></button>
  	<button class="btn btn-primary"><a href="add-form.php">Add New To Do</a></button>
+                      <button class="btn btn-primary"><a href="delete-table.php">Delete List</a></button>
   	<button class="btn btn-danger"><a href="log-out.php">Log Out</a></button>
+
 
   	</div>
 
