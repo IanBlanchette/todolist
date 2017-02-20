@@ -6,8 +6,6 @@ $password = '49314434';
 
 try 
 {
-  $table = "todolist";
-
     $db = new PDO($dsn, $username, $password);  
    
 
