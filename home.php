@@ -13,12 +13,29 @@ $password = '49314434';
 try 
 {
     $db = new PDO($dsn, $username, $password);  
-    echo '<p>connected</p>';
 
 }
 catch(PDOException $e) {
     echo $e->getMessage();
 }
+
+$query = "SELECT * FROM ian_todolist";
+$statement = $db->prepary($query);
+$statement->execute();
+$todolist = $statement->fetchAll();
+$statement->closeCursor();
+
+
+
+
+
+$table = "CREATE TABLE IF NOT EXISTS todolist (
+    id INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    description VARCHAR(250) NOT NULL,
+    creation_date TIMESTAMP
+    due_date DATE
+    )";
+    $insert = "INSERT INTO todolist (description, due_date) VALUES (Test, 901115)";
 ?>
 
 <!DOCTYPE html>
@@ -38,6 +55,27 @@ catch(PDOException $e) {
  <div class="container">
     <div class="row text-center">
   	<h3>This is your personal to do list</h3>
+    <table class="table table-striped table-hover table-bordered">
+                <tr>
+                    <th>ID</th>
+                    <th>Description</th>
+                    <th>Start Date</th>
+                    <th>Due Date</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+    <?php foreach($todolist as $ian_todolist) : ?>
+                        <tr>
+                            <td><?php echo $ian_todolist['id'] ?></td>
+                            <td><?php echo $ian_todolist['description'] ?></td>
+                            <td><?php echo $ian_todolist['creation_date'] ?></td
+                            <td><?php echo $ian_todolist['due_date'] ?></td>                            <!-- This line sends the gameID to the game_details page -->
+
+                            <td><a class="btn btn-primary" href="game_details.php?gameID=<?php echo $game['Id'] ?>"><i class="fa fa-pencil-square-o"></i> Edit</a></td>
+
+                            <td><a class="btn btn-danger" href="game_delete.php?gameID=<?php echo $game['Id'] ?>"><i class="fa fa-trash-o"></i> Delete</a></td>
+                        </tr>
+                    <?php endforeach; ?>
  	<button class="btn btn-primary"><a href="add-form.php">Add New To Do</a></button>
   	<button class="btn btn-danger"><a href="log-out.php">Log Out</a></button>
 
