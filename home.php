@@ -20,7 +20,7 @@ catch(PDOException $e) {
 }
 
 $query = "SELECT * FROM ian_todolist";
-$statement = $db->prepary($query);
+$statement = $db->prepare($query);
 $statement->execute();
 $todolist = $statement->fetchAll();
 $statement->closeCursor();
