@@ -1,8 +1,8 @@
 <?php
-include_once('database-connect.php');
-$sql=$db->prepare("DROP TABLE  'todolist'");
+require "database-connect.php"; // database connection 
+$sql=$db->prepare("DROP TABLE  todolist ");
 
-if($sql->exec()){
+if($sql->execute()){
 echo " Table deleted ";
 }else{
 print_r($sql->errorInfo()); 
