@@ -8,11 +8,11 @@ $insert = "INSERT INTO todolist (description, due_date) VALUES ($newToDo, $dueDa
 
 
 $db->exec($insert);
-
+header("Location: ./home.php");
 }
 catch(PDOException $e)
 {
 	echo $e->getMessage();
 }
-header("Location: ./home.php");
+
 ?>

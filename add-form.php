@@ -30,7 +30,7 @@ include_once('database-connect.php');
 		<div class="row text-center">
 			<div class="my-box">
 				<h1>My To Do List</h1>
-				<form action="database-change.php" method="POST">
+				<form action="add-new-to-do.php" method="POST">
   <fieldset>
     <legend>Add Your New To Do</legend>
     What's To Do: <input type="text" name="newToDo" placeholer="What do you need to do"><br>
