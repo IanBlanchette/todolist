@@ -1,6 +1,6 @@
 <?php
 
-$create = "CREATE TABLE todolist (
+$create = "CREATE TABLE ian_todolist (
 id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 description VARCHAR(500) NOT NULL,
 )";
