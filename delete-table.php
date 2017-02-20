@@ -1,5 +1,5 @@
 <?php
-require "database-connect.php"; // database connection 
+include_once('database-connect.php'); // database connection 
 $sql=$db->prepare("DROP TABLE  todolist ");
 
 if($sql->execute()){

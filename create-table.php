@@ -1,6 +1,6 @@
 <?php
 include_once('database-connect.php');
-$create = "CREATE TABLE todolist (
+$create = "CREATE TABLE newtodolist (
 id INT(10) AUTO_INCREMENT PRIMARY KEY,
 description VARCHAR(500) NOT NULL)";
 
