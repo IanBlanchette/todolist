@@ -14,7 +14,17 @@ $dbname = "ian_todolist";
 
 try 
 {
+  $table = "todolist";
+
     $db = new PDO($dsn, $username, $password);  
+    $db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );//Error Handling
+     $sql ="CREATE TABLE IF NOT EXISTS $table(
+     ID INT( 11 ) AUTO_INCREMENT PRIMARY KEY,
+     description VARCHAR( 100 ) NOT NULL,
+     creation_date TIMESTAMP,
+     due_date DATE NOT NULL);" ;
+     $db->exec($sql);
+     print("Created $table Table.\n");
 
 }
 catch(PDOException $e) {
@@ -24,16 +34,14 @@ catch(PDOException $e) {
 $table = "CREATE TABLE IF NOT EXISTS todolist (
     id INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     description VARCHAR(250) NOT NULL,
-    creation_date TIMESTAMP
+    creation_date TIMESTAMP,
     due_date DATE
-    )";
+    );";
     $insert = "INSERT INTO todolist (description, due_date) VALUES ('Test', '1990-11-15')";
 
 $query = "SELECT * FROM ian_todolist";
 $statement = $db->prepare($query);
-$statement->execute();
 $todolist = $statement->fetchAll();
-
 
 
 
