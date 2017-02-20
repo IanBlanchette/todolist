@@ -6,6 +6,7 @@ if(!isset($_SESSION['admin']))
 	header("Location: ./index.php");
 }
 
+include_once('database-connect.php');
 
 
 
@@ -22,19 +23,22 @@ if(!isset($_SESSION['admin']))
 	<link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
 	<link rel="stylesheet" href="font-awesome/font-awesome.css">
 	<link rel="stylesheet" href="stylesheets/styles.css">
+	<link rel="stylesheet" href="stylesheets/add-form-style.css">
 </head>
 <body>
 	<div class="container">
 		<div class="row text-center">
 			<div class="my-box">
 				<h1>My To Do List</h1>
-				<form action="database-change.php" method="post">
+				<form action="database-change.php" method="POST">
   <fieldset>
     <legend>Add Your New To Do</legend>
-    What's To Do: <input type="text" name="todo" placeholer="What do you need to do"><br>
+    What's To Do: <input type="text" name="newToDo" placeholer="What do you need to do"><br>
+    <br>
+    Whats the Due Date: <input type="date" name="dueDate" placeholder="dd-mm-yyyy" pattern="\d{1,2}-\d{1,2}-\d{4}"><br>
       </fieldset>
-</form>
-<button class="btn btn-primary"><a href="home.php">Back To List</a></button>
+</form><button class="btn btn-primary"><a href="add-new-to-do.php">Create New To Do</a></button>
+<button class="btn btn-danger"><a href="home.php">Back To List</a></button>
 
 			</div>
 		</div>
