@@ -1,19 +1,21 @@
 <?php
-include_once('database-connect.php');
+
+$servername = "ca-cdbr-azure-central-a.cloudapp.net";
+$username = 'b78671959fb3a5';
+$password = '49314434';
+$dbname = "ian_todolist";
 $newToDo = $_POST['newToDo'];
-
-
-
+$tableName = 'newtodolist';
 $insert = ("INSERT INTO newtodolist (description)
-    VALUES($newToDo)");
-
-   
- 
+    VALUES('$newToDo')");
 
 
-$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$db->exec($insert);
-header("Location: ./home.php");
+    $sql = "INSERT INTO $tableName (description) 
+VALUES ('$newToDo')";
+
+        $conn->exec($sql);
 ?>
-
