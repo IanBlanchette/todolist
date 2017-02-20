@@ -19,4 +19,5 @@ VALUES ('$newToDo')";
 
         $conn->exec($sql);
 
+header("Location: ./home.php");
 ?>
