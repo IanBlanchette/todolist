@@ -9,25 +9,17 @@ if(!isset($_SESSION['admin']))
 $dsn = 'mysql:host=ca-cdbr-azure-central-a.cloudapp.net;dbname=ian_todolist';
 $username = 'b78671959fb3a5';
 $password = '49314434';
+$dbname = "ian_todolist";
+
 
 try 
 {
     $db = new PDO($dsn, $username, $password);  
-
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }
 catch(PDOException $e) {
     echo $e->getMessage();
 }
-
-$query = "SELECT * FROM ian_todolist";
-$statement = $db->prepare($query);
-$statement->execute();
-$todolist = $statement->fetchAll();
-$statement->closeCursor();
-
-
-
-
 
 $table = "CREATE TABLE IF NOT EXISTS todolist (
     id INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -35,7 +27,21 @@ $table = "CREATE TABLE IF NOT EXISTS todolist (
     creation_date TIMESTAMP
     due_date DATE
     )";
-    $insert = "INSERT INTO todolist (description, due_date) VALUES (Test, 901115)";
+    $insert = "INSERT INTO todolist (description, due_date) VALUES ('Test', '1990-11-15')";
+
+$query = "SELECT * FROM ian_todolist";
+$statement = $db->prepare($query);
+$statement->execute();
+$todolist = $statement->fetchAll();
+
+
+
+
+
+
+
+
+$statement->closeCursor();
 ?>
 
 <!DOCTYPE html>
