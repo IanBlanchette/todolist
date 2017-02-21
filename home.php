@@ -8,6 +8,11 @@ if(!isset($_SESSION['admin']))
 
 include_once('database-connect.php');
 
+$query = "SELECT * FROM newtodolist"; // SQL statement
+$statement = $db->prepare($query); // encapsulate the sql statement
+$statement->execute(); // run on the db server
+$todo = $statement->fetchAll(); // returns an array
+$statement->closeCursor(); // close the connection
 
 ?>
 
@@ -50,8 +55,7 @@ include_once('database-connect.php');
                     <?php endforeach; ?>
                    
  	<button class="btn btn-primary"><a href="add-form.php">Add New To Do</a></button>
-          <button class="btn btn-danger"><a href="create-table.php">create</a></button>
-          <button class="btn btn-danger"><a href="delete-table.php">delete</a></button>          
+          
   	<button class="btn btn-danger"><a href="log-out.php">Log Out</a></button>
 
 
