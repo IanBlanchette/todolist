@@ -8,5 +8,4 @@ notes VARCHAR(500) NOT NULL)";
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 $db->exec($create);
-
 ?>
