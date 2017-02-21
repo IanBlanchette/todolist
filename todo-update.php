@@ -9,18 +9,20 @@ $dbname = "ian_todolist";
 
 
 $isAddition = filter_input(INPUT_POST, "isAddition");
-
+$name = filter_input(INPUT_POST, "NameTextField"); 
+$notes = filter_input(INPUT_POST, "NotesTextField"); 
 if($isAddition == "1") {
-$query = "INSERT INTO newtodolist (description) VALUES (:description)";
+$query = "INSERT INTO newtodolist (name, notes) VALUES (:name, :notes)";
 $statement = $db->prepare($query); // encapsulate the sql statement
 }
 else {
 $gameID = filter_input(INPUT_POST, "IDTextField"); // $_POST["IDTextField"];
-$query = "UPDATE newtodolist SET description = :description WHERE id = :todolist "; // SQL statement
+$query = "UPDATE newtodolist SET name = :name, notes = :notes WHERE id = :id "; // SQL statement
 $statement = $db->prepare($query); // encapsulate the sql statement
-$statement->bindValue(':id', $newtodolist);
+$statement->bindValue(':id', $id);
 }
-$statement->bindValue(':description', $description);
+$statement->bindValue(':name', $name);
+$statement->bindValue(':notes', $notes);
 $statement->execute(); // run on the db server
 $statement->closeCursor(); // close the connection
 // redirect to index page

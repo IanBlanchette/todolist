@@ -36,7 +36,7 @@ $statement->closeCursor(); // close the connection
     <div class="row">
         <div class="col-md-offset-3 col-md-6">
             <h1>To Do List Update</h1>
-            <form action="update_database.php" method="post">
+            <form action="todo-update.php" method="post">
                 <div class="form-group">
                     <label for="IDTextField" hidden>To Do List</label>
                     <input type="hidden" class="form-control" id="IDTextField" name="IDTextField"
