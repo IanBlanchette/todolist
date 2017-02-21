@@ -11,13 +11,13 @@ $insert = ("INSERT INTO newtodolist (description)
 
 
 
-    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $db = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $sql = "INSERT INTO $tableName (description) 
+    $insert = "INSERT INTO $tableName (description) 
 VALUES ('$newToDo')";
 
-        $conn->exec($sql);
+        $db->exec($insert);
 
 header("Location: ./home.php");
 ?>
