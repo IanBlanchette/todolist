@@ -36,21 +36,28 @@ $statement->closeCursor(); // close the connection
     <div class="row">
         <div class="col-md-offset-3 col-md-6">
             <h1>To Do List Update</h1>
-            <form action="todo-update.php" method="post">
+            <form action="update_database.php" method="post">
                 <div class="form-group">
-                    <label for="IDTextField" hidden>Description</label>
+                    <label for="IDTextField" hidden>To Do List</label>
                     <input type="hidden" class="form-control" id="IDTextField" name="IDTextField"
-                           placeholder="Description" value="<?php echo $newtodolist['id']; ?>">
+                           placeholder="To Do List" value="<?php echo $newtodolist['id']; ?>">
                 </div>
                 <div class="form-group">
-                    <label for="CostTextField">Description</label>
+                    <label for="NameTextField">Name</label>
+                    <input type="text" class="form-control" id="NameTextField"  name="NameTextField"
+                           placeholder="Name" required  value="<?php echo $newtodolist['name']; ?>">
+                </div>
+                <div class="form-group">
+                    <label for="CostTextField">Game Cost</label>
                     <input type="text" class="form-control" id="CostTextField" name="CostTextField"
-                           placeholder="Game Cost" required  value="<?php echo $newtodolist['description']; ?>">
+                           placeholder="Notes" required  value="<?php echo $newtodolist['notes']; ?>">
                 </div>
                     <input type="hidden" name="isAddition" value="<?php echo $isAddition; ?>">
                 <button type="submit" id="SubmitButton" class="btn btn-primary">Submit</button>
-                <button class="btn btn-danger"><a href="home.php">Back To List</a></button>
+                 <button class="btn btn-danger"><a href="home.php">Back To List</a></button>
             </form>
+               
+           
 
         </div>
     </div>
