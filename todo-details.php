@@ -45,7 +45,7 @@ $statement->closeCursor(); // close the connection
                 <div class="form-group">
                     <label for="NameTextField">Name</label>
                     <input type="text" class="form-control" id="NameTextField"  name="NameTextField"
-                           placeholder="<?php echo $newtodolist['name']; ?>" required  value="">
+                           placeholder="Name" required  value="<?php echo $newtodolist['name']; ?>">
                 </div>
                 <div class="form-group">
                     <label for="NotesTextField">Notes</label>
