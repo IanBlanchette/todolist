@@ -12,7 +12,7 @@ $isAddition = filter_input(INPUT_POST, "isAddition");
 $name = filter_input(INPUT_POST, "NameTextField"); 
 $notes = filter_input(INPUT_POST, "NotesTextField"); 
 if($isAddition == "1") {
-$query = "INSERT INTO newtodolist (name, notes) VALUES (:name, :notes)";
+$query = "INSERT INTO newtodolist (name, notes) VALUES ('$name', '$notes')";
 $statement = $db->prepare($query); // encapsulate the sql statement
 }
 else {
