@@ -1,15 +1,15 @@
 
 <?php
 include_once('database-connect.php'); 
-$id = $_GET["id"]; 
-if($id == 0) {
-    $todo = null;
+$getId = $_GET["id"]; 
+if($getId == 0) {
+    $newtodolist = null;
     $isAddition = 1;
 } else {
     $isAddition = 0;
 $query = "SELECT * FROM newtodolist WHERE id = :id "; // SQL statement
 $statement = $db->prepare($query); // encapsulate the sql statement
-$statement->bindValue(':id', $id);
+$statement->bindValue(':id', $getId);
 $statement->execute(); // run on the db server
 $game = $statement->fetch(); // returns only one record
 $statement->closeCursor(); // close the connection
