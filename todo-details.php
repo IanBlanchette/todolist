@@ -1,15 +1,16 @@
 
 <?php
 include_once('database-connect.php'); 
-$getId = $_GET["id"]; 
-if($getId == 0) {
-    $newtodolist = null;
+$id = $_GET["id"];
+
+if($id == 0) {
+    $getId = null;
     $isAddition = 1;
 } else {
     $isAddition = 0;
 $query = "SELECT * FROM newtodolist WHERE id = :id "; // SQL statement
 $statement = $db->prepare($query); // encapsulate the sql statement
-$statement->bindValue(':id', $getId);
+$statement->bindValue(':id', $id);
 $statement->execute(); // run on the db server
 $getId = $statement->fetch(); // returns only one record
 $statement->closeCursor(); // close the connection
@@ -36,21 +37,22 @@ $statement->closeCursor(); // close the connection
     <div class="row">
         <div class="col-md-offset-3 col-md-6">
             <h1>To Do List Update</h1>
+            <?php echo $id; ?>
             <form action="todo-update.php" method="post">
                 <div class="form-group">
                     <label for="IDTextField" hidden>To Do List</label>
                     <input type="hidden" class="form-control" id="IDTextField" name="IDTextField"
-                           placeholder="To Do List" value="<?php echo $newtodolist['id']; ?>">
+                           placeholder="To Do List" value="<?php echo $getId['id']; ?>">
                 </div>
                 <div class="form-group">
                     <label for="NameTextField">Name</label>
                     <input type="text" class="form-control" id="NameTextField"  name="NameTextField"
-                           placeholder="Name" required  value="<?php echo $newtodolist['name']; ?>">
+                           placeholder="Name" required  value="<?php echo $getId['name']; ?>">
                 </div>
                 <div class="form-group">
                     <label for="NotesTextField">Notes</label>
                     <input type="text" class="form-control" id="CostTextField" name="NotesTextField"
-                           placeholder="Notes" required  value="<?php echo $newtodolist['notes']; ?>">
+                           placeholder="Notes" required  value="<?php echo $getId['notes']; ?>">
                 </div>
                     <input type="hidden" name="isAddition" value="<?php echo $isAddition; ?>">
                 <button type="submit" id="SubmitButton" class="btn btn-primary">Submit</button>

@@ -2,7 +2,6 @@
 include_once('database-connect.php');
 $create = "CREATE TABLE newtodolist (
 id INT AUTO_INCREMENT PRIMARY KEY,
-complete BOOLEAN NULL,
 name VARCHAR(100) NOT NULL,
 notes VARCHAR(500) NOT NULL)";
 
