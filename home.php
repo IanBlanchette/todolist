@@ -33,7 +33,7 @@ $statement->closeCursor(); // close the connection
 <body>
  <div class="container">
     <div class="row text-center">
-  	<h3>This is your personal to do list</h3>
+  	<h3>Your Personal To Do List</h3>
     <table class="table table-bordered">
                 <tr>  
                     <th></th>
@@ -51,14 +51,14 @@ $statement->closeCursor(); // close the connection
                             <td><?php echo $newtodolist['notes'] ?></td>
                                                   
 
-                            <td><a class="btn btn-primary" href="todo-details.php?id=<?php echo $newtodolist['id'] ?>"><i class="fa fa-pencil-square-o"></i> Edit</a></td>
-                            <td><a class="btn btn-danger" href="todo-delete.php?id=<?php echo $newtodolist['id'] ?>" onclick="return confirm('Delete?')"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</a></td>
+                            <td class="table-back"><a class="btn btn-primary" href="todo-details.php?id=<?php echo $newtodolist['id'] ?>"><i class="fa fa-pencil-square-o"></i> Edit</a></td>
+                            <td class="table-back"><a class="btn btn-danger" href="todo-delete.php?id=<?php echo $newtodolist['id'] ?>" onclick="return confirm('Delete?')"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</a></td>
                         </tr>
                     <?php endforeach; ?>
                    
- 	<button class="btn btn-primary"><a href="add-form.php">Add New To Do</a></button>
+ 	<button class="my-btn btn btn-primary"><a href="add-form.php">Add New To Do</a></button>
           
-  	<button class="btn btn-danger"><a href="log-out.php">Log Out</a></button>
+  	<button class="my-btn btn btn-danger"><a href="log-out.php">Log Out</a></button>
 
 
   	</div>

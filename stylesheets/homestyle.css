@@ -1,7 +1,4 @@
-table.table.table-bordered 
-{
-	background-color: white;
-}
+
 a
 {
 	color: white;
@@ -10,4 +7,14 @@ a
 a:hover
 {
 	color: black;
+}
+
+button
+{
+	padding: 5px;
+}
+
+.table-back 
+{
+	background-color:white;
 }
