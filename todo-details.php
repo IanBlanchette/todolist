@@ -1,7 +1,7 @@
 
 <?php
-include_once('database-connect.php'); // include the database connection file
-$id = $_GET["id"]; // assigns the gameID from the URL
+include_once('database-connect.php'); 
+$id = $_GET["id"]; 
 if($id == 0) {
     $todo = null;
     $isAddition = 1;
@@ -45,11 +45,11 @@ $statement->closeCursor(); // close the connection
                 <div class="form-group">
                     <label for="NameTextField">Name</label>
                     <input type="text" class="form-control" id="NameTextField"  name="NameTextField"
-                           placeholder="Name" required  value="<?php echo $newtodolist['name']; ?>">
+                           placeholder="<?php echo $newtodolist['name']; ?>" required  value="">
                 </div>
                 <div class="form-group">
-                    <label for="CostTextField">Game Cost</label>
-                    <input type="text" class="form-control" id="CostTextField" name="CostTextField"
+                    <label for="NotesTextField">Notes</label>
+                    <input type="text" class="form-control" id="CostTextField" name="NotesTextField"
                            placeholder="Notes" required  value="<?php echo $newtodolist['notes']; ?>">
                 </div>
                     <input type="hidden" name="isAddition" value="<?php echo $isAddition; ?>">
