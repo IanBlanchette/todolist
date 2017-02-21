@@ -38,7 +38,9 @@ $statement->closeCursor(); // close the connection
                 <tr>  
                     <th></th>
                     <th>ID</th>
-                    <th>Description</th>
+                    <th>Completed</th>                    
+                    <th>Name</th>
+                    <th>Notes</th>
                     <th></th>
                     <th></th>
                 </tr>
@@ -46,7 +48,9 @@ $statement->closeCursor(); // close the connection
                         <tr>
                             <td><?php echo '<form action="cross-out.php" method="POST"><input type="checkbox" name="checked" value="Check"></form>'?></td>
                             <td><?php echo $newtodolist['id'] ?></td>
-                            <td><?php echo $newtodolist['description'] ?></td>
+                            <td><?php echo $newtodolist['complete'] ?></td>
+                            <td><?php echo $newtodolist['name'] ?></td>
+                            <td><?php echo $newtodolist['notes'] ?></td>
                                                   
 
                             <td><a class="btn btn-primary" href="todo-details.php?id=<?php echo $newtodolist['id'] ?>"><i class="fa fa-pencil-square-o"></i> Edit</a></td>

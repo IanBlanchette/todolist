@@ -4,7 +4,8 @@ $servername = "ca-cdbr-azure-central-a.cloudapp.net";
 $username = 'b78671959fb3a5';
 $password = '49314434';
 $dbname = "ian_todolist";
-$newToDo = $_POST['newToDo'];
+$name = $_POST['name'];
+$notes = $_POST['notes'];
 $tableName = 'newtodolist';
 $insert = ("INSERT INTO newtodolist (description)
     VALUES('$newToDo')");
@@ -14,8 +15,8 @@ $insert = ("INSERT INTO newtodolist (description)
     $db = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $insert = "INSERT INTO $tableName (description) 
-VALUES ('$newToDo')";
+    $insert = "INSERT INTO $tableName (name, notes) 
+VALUES ('$name', '$notes')";
 
         $db->exec($insert);
 

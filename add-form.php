@@ -33,7 +33,9 @@ include_once('database-connect.php');
 				<form action="add-new-to-do.php" method="POST">
 					<fieldset>
 						<legend>Add Your New To Do</legend>
-						What's To Do: <input type="text" placeholder="New To Do" name="newToDo">
+						What's To Do: <input type="text" placeholder="New To Do" name="name">
+						<br>
+						Notes For The To Do: <input type="text" placeholder="Notes" name="notes">
 						<br>
 					</fieldset>
 					<input class="btn btn-primary" type="submit" name="submit" value="New To Do">

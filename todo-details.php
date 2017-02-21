@@ -49,6 +49,7 @@ $statement->closeCursor(); // close the connection
                 </div>
                     <input type="hidden" name="isAddition" value="<?php echo $isAddition; ?>">
                 <button type="submit" id="SubmitButton" class="btn btn-primary">Submit</button>
+                <button class="btn btn-danger"><a href="home.php">Back To List</a></button>
             </form>
 
         </div>
