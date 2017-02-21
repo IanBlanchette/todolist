@@ -25,7 +25,7 @@ $statement->closeCursor(); // close the connection
 <title>To Do List</title>
 <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
-<link rel="stylesheet" href="font-awesome/font-awesome.css">
+<link rel="stylesheet" href="font-awesome/css/font-awesome.css">
 <link rel="stylesheet" href="stylesheets/styles.css">
 <link rel="stylesheet" href="stylesheets/homestyle.css">
 </head>
@@ -44,13 +44,13 @@ $statement->closeCursor(); // close the connection
                 </tr>
     <?php foreach($todo as $newtodolist) : ?>
                         <tr>
+                            <td><?php echo '<form action="cross-out.php" method="POST"><input type="checkbox" name="checked" value="Check"></form>'?></td>
                             <td><?php echo $newtodolist['id'] ?></td>
                             <td><?php echo $newtodolist['description'] ?></td>
                                                   
 
-                            <td><a class="btn btn-primary" href="game_details.php?gameID=<?php echo $newtodolist['id'] ?>"><i class="fa fa-pencil-square-o"></i> Edit</a></td>
-
-                            <td><a class="btn btn-danger" href="game_delete.php?gameID=<?php echo $newtodolist['id'] ?>"><i class="fa fa-trash-o"></i> Delete</a></td>
+                            <td><a class="btn btn-primary" href="todo-details.php?id=<?php echo $newtodolist['id'] ?>"><i class="fa fa-pencil-square-o"></i> Edit</a></td>
+                            <td><a class="btn btn-danger" href="todo-delete.php?id=<?php echo $newtodolist['id'] ?>"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</a></td>
                         </tr>
                     <?php endforeach; ?>
                    
