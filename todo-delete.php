@@ -7,7 +7,8 @@ if($todolist != false) {
     $statement->bindValue(":id", $todolist);
     $success = $statement->execute(); // execute the prepared query
     $statement->closeCursor(); // close off database
+    header("Location: ./home.php");;
 }
 // redirect to index page
-header("Location: ./home.php");;
+
 ?>

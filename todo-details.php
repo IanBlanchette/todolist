@@ -11,7 +11,7 @@ $query = "SELECT * FROM newtodolist WHERE id = :id "; // SQL statement
 $statement = $db->prepare($query); // encapsulate the sql statement
 $statement->bindValue(':id', $getId);
 $statement->execute(); // run on the db server
-$game = $statement->fetch(); // returns only one record
+$getId = $statement->fetch(); // returns only one record
 $statement->closeCursor(); // close the connection
 }
 ?>

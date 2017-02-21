@@ -16,13 +16,11 @@ $query = "INSERT INTO newtodolist (name, notes) VALUES (:name, :notes)";
 $statement = $db->prepare($query); // encapsulate the sql statement
 }
 else {
-$gameID = filter_input(INPUT_POST, "IDTextField"); // $_POST["IDTextField"];
-$query = "UPDATE newtodolist SET name = :name, notes = :notes WHERE id = :id "; // SQL statement
+$listId = filter_input(INPUT_POST, "IDTextField"); // $_POST["IDTextField"];
+$query = "UPDATE newtodolist SET name = '$name', notes = '$notes' WHERE id = '$listId'"; // SQL statement
 $statement = $db->prepare($query); // encapsulate the sql statement
 $statement->bindValue(':id', $id);
 }
-$statement->bindValue(':name', $name);
-$statement->bindValue(':notes', $notes);
 $statement->execute(); // run on the db server
 $statement->closeCursor(); // close the connection
 // redirect to index page

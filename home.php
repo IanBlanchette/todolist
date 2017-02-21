@@ -34,7 +34,7 @@ $statement->closeCursor(); // close the connection
  <div class="container">
     <div class="row text-center">
   	<h3>This is your personal to do list</h3>
-    <table class="table table-striped table-hover table-bordered">
+    <table class="table table-bordered">
                 <tr>  
                     <th></th>
                     <th>ID</th>
@@ -54,7 +54,7 @@ $statement->closeCursor(); // close the connection
                                                   
 
                             <td><a class="btn btn-primary" href="todo-details.php?id=<?php echo $newtodolist['id'] ?>"><i class="fa fa-pencil-square-o"></i> Edit</a></td>
-                            <td><a class="btn btn-danger" href="todo-delete.php?id=<?php echo $newtodolist['id'] ?>"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</a></td>
+                            <td><a class="btn btn-danger" href="todo-delete.php?id=<?php echo $newtodolist['id'] ?>" onclick="return confirm('Delete?')"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</a></td>
                         </tr>
                     <?php endforeach; ?>
                    
@@ -64,9 +64,6 @@ $statement->closeCursor(); // close the connection
 
 
   	</div>
-
-  	<table class="table">
-
 
   	</table>
 
