@@ -1,20 +1,8 @@
-
-a
+h2
+{
+	color:white;
+}
+p
 {
 	color: white;
-}
-
-a:hover
-{
-	color: black;
-}
-
-button
-{
-	padding: 5px;
-}
-
-.table-back 
-{
-	background-color:white;
 }
